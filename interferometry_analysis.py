@@ -58,7 +58,7 @@ ANGLE_READING_BOUND_DEG = 0.5
 TEMP_READING_BOUND_C = 0.05
 CALIPER_READING_BOUND_MM = 0.005
 # Uncertainty estimated for reproducibility of the first/last fringe phase.
-FRINGE_COUNT_SIGMA = 1.0
+FRINGE_COUNT_SIGMA = 0.5
 # Reference-angle bias explored as a systematic sensitivity interval
 PRISM_REFERENCE_BIAS_BOUND_DEG = 0.5
 # The 3 green runs and prism +/- directions are taken as distinct runs.
