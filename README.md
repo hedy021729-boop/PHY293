@@ -35,8 +35,3 @@ To use the sample appendix calculations in Overleaf, insert `\input{results/appe
 - Wavelength used downstream is the average of three fit-derived green wavelengths. The supplied working uncertainty is the larger of the trial-to-trial standard error and the independent-fit uncertainty of the mean. This is a **conservative reporting convention**, not a uniquely defined statistical confidence interval; both components are printed explicitly in the notes.
 - Red LED wavelength/coherence length/spectral bandwidth are not included because the uploaded datasets do not contain red LED observations.
 
-## Lab report caveats
-
-Only five measurements exist per green run although the manual suggests 10–20. Missing whole fringes can occur randomly during an experiment while producing *cumulative, correlated* counting shifts later in a run. A residual pattern can suggest a miscount but is not proof. Backlash is not presumed when the screw was advanced in a single direction. Thermal gradients/lag, the precise perpendicular reference of the prism, and shared calibration effects cannot be fully quantified from the existing data.
-
-If your TA requires the strict OLS procedures from the provided class handout rather than an errors-in-variables estimate, use the OLS columns and state that the x-error bars are shown but x-uncertainty is not included in the OLS fit. Do not mix the OLS slopes with the parameter errors of the other fitting model.
