@@ -1,0 +1,84 @@
+\section*{Appendix: Sample data analysis and uncertainty propagation}
+\noindent All values below use the reported uncertainty convention: instrument
+half-resolution bounds are converted to standard uncertainties by dividing by $\sqrt{3}$,
+assuming uniform rounding errors. The uncertainty of locating fringes is assumed to be
+$\sigma_N=0.5$ fringe. Common reference errors are not independent observations.
+
+\subsection*{Green laser: wavelength from fitted slope}
+\begin{align*}
+N &= m_\lambda\Delta x+b,\\
+\lambda &=\frac{2000}{m_\lambda}\;\mathrm{nm},\\
+\sigma_\lambda &=\left|\frac{\partial\lambda}{\partial m_\lambda}\right|\sigma_m
+=\frac{2000\sigma_m}{m_\lambda^2}.
+\end{align*}
+For green trial 1, $m_\lambda=3.60162\pm0.09125$ fringes/$\mu$m, hence
+$\lambda_1=555.31\pm14.07$ nm.
+
+\subsection*{Measurement uncertainty in mirror displacement}
+If each micrometer reading has a maximum rounding error of $0.5\,\mu$m,
+$\sigma_{x_i}=0.5/\sqrt{3}\,\mu$m. For a difference
+$\Delta x_i=x_i-x_0$, the standard uncertainty of a single difference is
+\[
+\sigma_{\Delta x}=\sqrt{\sigma_{x_i}^2+\sigma_{x_0}^2}
+=\sqrt{2}\frac{0.5}{\sqrt3}\,\mu\mathrm m.
+\]
+The same $x_0$ is shared by the data, so the point-to-point covariance is not zero.
+A free intercept absorbs a constant reference offset when estimating the slope.
+
+\subsection*{Angular transformation and refractive index}
+\begin{align*}
+\theta &= \frac{\pi}{180}\theta_{\mathrm{deg}},\qquad u=\theta^2,\\
+\sigma_u&=\left|\frac{du}{d\theta}\right|\sigma_\theta=2|\theta|\sigma_\theta,\\
+n&=\frac{1}{1-m_n\lambda/t}.
+\end{align*}
+At $\theta=1^\circ$, $u=0.0003046$ rad$^2$ and with a single-angle
+standard uncertainty of $0.0050383$ rad, $\sigma_u=0.0001759$ rad$^2$.
+
+For independent slope, wavelength, and thickness uncertainties,
+\[
+\sigma_n=n^2\sqrt{\left(\frac{\lambda\sigma_m}{t}\right)^2+
+\left(\frac{m\sigma_\lambda}{t}\right)^2+
+\left(\frac{m\lambda\sigma_t}{t^2}\right)^2}.
+\]
+For the 134$^\circ$+ direction $m_n=6645.011\pm273.348$ rad$^{-2}$,
+$t=7790000$ nm, and $\lambda=550.991$ nm. This gives $n=1.8868$ and
+$\sigma_n=0.0730$. The shared-reference-angle
+bias is an additional possible systematic error, treated separately.
+
+\subsection*{Temperature difference and aluminium expansion}
+\begin{align*}
+\Delta T_i &= T_i-T_0,\\
+\sigma_{\Delta T_i}&=\sqrt{\sigma_{T_i}^2+\sigma_{T_0}^2},\\
+\alpha &= \frac{m_\alpha\lambda}{2L_0},\\
+\frac{\sigma_\alpha}{|\alpha|} &=
+\sqrt{\left(\frac{\sigma_{m_\alpha}}{m_\alpha}\right)^2+
+\left(\frac{\sigma_\lambda}{\lambda}\right)^2+
+\left(\frac{\sigma_{L_0}}{L_0}\right)^2}.
+\end{align*}
+At $T=27.0^\circ$C, $T_0=25.2^\circ$C and each reading has
+$\sigma_T=0.05/\sqrt3$ C, the difference is $\Delta T=1.8^\circ$C with
+$\sigma_{\Delta T}=0.0408^\circ$C.
+The fitted slope is $m_\alpha=6.95054\pm0.07632$ fringes/$^\circ$C,
+giving $\alpha=(21.486\pm0.392)\times10^{-6}\,^\circ\mathrm{C}^{-1}$.
+
+\subsection*{Goodness of fit}
+\[
+\chi^2=\sum_i\frac{(y_i-\widehat y_i)^2}{\sigma_{y_i}^2},
+\qquad \chi^2_\nu=\frac{\chi^2}{N-p}
+\]
+The above conventional expression applies to independent errors in $y$ only.
+Our primary two-axis fit minimizes squared normalized corrections in both
+$x$ and $y$, and reports the corresponding total $\chi^2$ divided by $N-p$.
+$R^2=1-\mathrm{SSE}/\mathrm{SST}$ is computed from vertical residuals at
+recorded x-values. Exact reference-angle and thermal-lag systematics are not
+captured by these reported statistical uncertainties.
+\subsection*{Course handout: OLS slope, uncertainty, and residual}
+\[
+m=\frac{N\sum_i x_i y_i-(\sum_i x_i)(\sum_i y_i)}{N\sum_i x_i^2-(\sum_i x_i)^2},\qquad
+s_m=\sqrt{\frac{Ns_{y,x}^2}{\Delta}},\qquad
+s_{y,x}^2=\frac{\sum_i(y_i-mx_i-b)^2}{N-2}.
+\]
+For green trial 1, $N=5$ and $\Delta=1250$. The ordinary least-squares slope is $m=3.6000\pm0.0611$ fringes/$\mu$m.
+At $\Delta x=5.0\,\mu$m, the observed fringe count is $15$, the prediction is $14.200$, and residual is $0.800$ fringes.
+The effective vertical residual-bar uncertainty in a linear fit is $\sigma_{r,\mathrm{eff}}\simeq\sqrt{\sigma_N^2+(m\sigma_{x,\mathrm{ind}})^2}$.
+

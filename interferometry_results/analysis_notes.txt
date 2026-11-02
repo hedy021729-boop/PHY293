@@ -1,0 +1,72 @@
+INTERFEROMETRY FIT RESULTS AND IMPORTANT INTERPRETATION NOTES
+====================================================================
+Green wavelength per trial: [555.306, 551.897, 545.769] nm
+Green independent-run mean = 550.991 nm
+Trial-to-trial standard error of mean = 2.790 nm (3 trials)
+Propagated mean fit uncertainty (independent formal fit errors) = 8.031 nm
+WORKING downstream wavelength uncertainty = 8.031 nm, the larger of those two
+This working choice is a transparent conservative convention, not a unique exact 68% CI.
+Common instrument calibration/systematic effects are not estimated by repeated measurements.
+
+Green trial 1: slope=3.60162 +/-0.09125; b=-3.8242 +/-1.51; R²=0.99914; χ²=1.346; DOF=3; reduced χ²=0.449
+Green trial 2: slope=3.62387 +/-0.09155; b=1.442 +/-1.52; R²=0.99796; χ²=3.201; DOF=3; reduced χ²=1.067
+Green trial 3: slope=3.66456 +/-0.0921; b=2.8316 +/-1.53; R²=0.99765; χ²=3.730; DOF=3; reduced χ²=1.243
+Prism 134+: slope=6645.01 +/-273.3; b=0 +/-0; R²=0.95253; χ²=20.215; DOF=7; reduced χ²=2.888
+Prism 134-: slope=5053.35 +/-208.8; b=0 +/-0; R²=0.99772; χ²=0.799; DOF=7; reduced χ²=0.114
+Aluminium expansion: slope=6.95054 +/-0.07632; b=1.5199 +/-1.08; R²=0.99803; χ²=16.338; DOF=7; reduced χ²=2.334
+
+Prism nominal comparison: 134°+ n=1.88681; 134°- n=1.55624.
+Prism 134+ OLS free-intercept diagnostic: slope=5501.69, b=8.76 fringes
+Prism 134- OLS free-intercept diagnostic: slope=5054.79, b=-0.01 fringes
+Simple joint directional-asymmetry diagnostic: reference offset ≈ -0.358 degrees
+Joint model slope=5612.24 rad^-2, n=1.6583.
+The joint offset is a MODEL DIAGNOSTIC, not a directly measured correction.
+Possible assumed reference-angle bias versus inferred combined refractive index:
+  assumed shift -0.50° -> slope 5575.94, n 1.6512
+  assumed shift +0.00° -> slope 5612.24, n 1.6583
+  assumed shift +0.50° -> slope 5393.44, n 1.6168
+
+Aluminium alpha = (2.14861e-05 +/- 3.9e-07) 1/°C
+Two measurements at ΔT=16.9°C have N=119 and N=122. Both retained.
+The point (0°C,0 fringe) is a defined baseline and excluded from fitted data.
+
+UNCERTAINTY CONVENTIONS
+Resolution half-widths 0.5 µm, 0.5°, 0.05°C, 0.005 mm are treated as
+uniform rounding bounds and divided by sqrt(3) for 1-sigma propagation.
+0.5 fringe is separately treated as an estimated 1-sigma count uncertainty.
+x error bars include shared starting reading where appropriate; the fit
+uses only independent x uncertainties because free intercepts absorb
+a common additive baseline shift. Prism reference-angle systematic
+is assessed separately and is NOT in formal n uncertainty.
+Residual plots show ordinary vertical residuals; vertical error bars show
+sqrt(sigma_N^2 + (dy/dx * sigma_x,independent)^2).
+The chi-square of the two-axis fit measures both normalized x and y
+corrections, NOT just the vertical residuals seen on the bottom panel.
+
+LIMITATIONS / REPORT DISCUSSION
+- No artificially added origin for green laser or prism.
+- Only five green data points per run, fewer than manual recommendation.
+- Missed fringes can occur randomly between trials but create cumulative,
+  correlated step offsets within each trial; residuals may suggest them
+  but cannot prove one was missed, or exactly how many.
+- Mechanical jitter is a likely count-tracking problem, not additional
+  measured micrometer-position uncertainty. Backlash not claimed when
+  screw operated continuously in one direction.
+- 134° prism reference selected once; unknown true perpendicular offset
+  is not fully described by +/-0.5° scale-reading resolution alone.
+- Aluminium temperature gradient / thermometer lag could explain
+  different fringe counts at same recorded temperature. Not quantified.
+- A few points may be missed whole fringes; do not discard them simply
+  to improve fit; document any justified exclusion or alternative fit.
+- Laser wavelength is shared across subsequent experiments, so its
+  contribution cannot be treated as a new independent draw per point.
+- The measured red LED wavelength, coherence length, and bandwidth
+  cannot be computed without red LED observations.
+- A small reduced chi² / R² mismatch is not automatically evidence of
+  a bad plot; inspect assumptions, reference offsets and residual patterns.
+
+COURSE HANDOUT CROSS-CHECK
+Each results row includes ordinary least squares slope and its standard
+error obtained from residual variance (the class handout formulas).
+Primary estimated slopes above account for both x and y uncertainties;
+their parameter uncertainties do not rescale input errors to force χ²ν=1.

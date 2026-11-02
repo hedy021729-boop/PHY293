@@ -1,0 +1,10 @@
+Rerference angle (perpendicular) rotation mount reading = 134 degrees,,,,,,Variables in equation,Value,uncertainty
+theta (degrees),theta (radians),theta^2 (radians^2),N for theta >134,N for theta < 134,,wavelength (nm),,
+1,0.01745329252,0.0003046174198,6,2,,thickness (nm),7790000, 0.005mm
+2,0.03490658504,0.001218469679,15,6,,angle reading (rotation mount),,0.5 degrees
+3,0.05235987756,0.002741556778,26,13,,fringe counting,,0.5 fringe
+4,0.06981317008,0.004873878717,38,23,,,,
+5,0.0872664626,0.007615435495,53,39,,,,
+6,0.1047197551,0.01096622711,70,57,,,,
+7,0.1221730476,0.01492625357,88,78,,,,
+8,0.1396263402,0.01949551487,116,96,,,,
